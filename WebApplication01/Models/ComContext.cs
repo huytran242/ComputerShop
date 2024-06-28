@@ -7,6 +7,7 @@ namespace WebApplication01.Models
     public class ComContext : DbContext
     {
         public ComContext(DbContextOptions<ComContext> options) :base (options) { }
+        public ComContext() { }
         public DbSet<role> Roles { get; set; }
         public DbSet<Article> Articles { get; set; }    
         public DbSet<Category> Categories { get; set; }

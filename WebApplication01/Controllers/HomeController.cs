@@ -1,3 +1,4 @@
+using Data.Moder;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using WebApplication01.Models;
@@ -14,8 +15,12 @@ namespace WebApplication01.Controllers
         }
 
         public IActionResult Index()
+
         {
-            return View();
+            ComContext comContext = new ComContext();
+            List<Product> products = comContext.Products.ToList();
+
+            return View(products);
         }
 
         public IActionResult Details()
